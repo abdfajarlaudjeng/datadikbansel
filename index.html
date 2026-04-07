@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DATADIK BANAWA SELATAN | Sistem Informasi Geografis (SIG)</title>
+    <title>DISDIKPORA | Sistem Informasi Geografis (SIG)</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;400i;700&display=swap" rel="stylesheet">
@@ -320,22 +320,25 @@
                 const jmlSiswa = (parseInt(cols[9]) || 0) + (parseInt(cols[10]) || 0);
 
                 schoolData.push({
-                    id: i, 
-                    nama: cols[0], 
-                    lat: parseFloat(cols[1]), 
-                    long: parseFloat(cols[2]),
-                    jenjang: jnj, 
-                    fotoDrive: cols[4], 
-                    npsn: cols[5], 
-                    alamat: cols[6],
-                    kecamatan: kec, 
-                    kepsek: cols[8], 
-                    status: (cols[14] || "SWASTA").toUpperCase(),
-                    akreditasi: cols[13] || "-",
-                    jmlGuru: cols[11] || "0",
-                    jmlSiswa: jmlSiswa,
-                    linkKemdikbud: cols[21] || "#",
-                    linkWeb: cols[22] || "#"
+    id: i, 
+    nama: cols[0], 
+    lat: parseFloat(cols[1]), 
+    long: parseFloat(cols[2]),
+    jenjang: jnj, 
+    fotoDrive: cols[4], 
+    npsn: cols[5], 
+    alamat: cols[6],
+    kecamatan: kec, 
+    kepsek: cols[8], 
+    operator: cols[15], // Menambahkan kolom Operator (Indeks 12)
+    Rombel: cols[12], // Menambahkan kolom Operator (Indeks 13)
+    Kurikulum: cols[16], // Menambahkan kolom Operator (Indeks 14)
+    status: (cols[14] || "SWASTA").toUpperCase(),
+    akreditasi: cols[13] || "-",
+    jmlGuru: cols[11] || "0",
+    jmlSiswa: jmlSiswa,
+    linkKemdikbud: cols[21] || "#",
+    linkWeb: cols[22] || "#"
                 });
             }
         });
@@ -414,6 +417,9 @@ let slidesHtml = photoLinks.map(link => {
                             </div>
                         </div>
                         <p><strong>Kepsek:</strong> ${d.kepsek || '-'}</p>
+                        <p><strong>Operator:</strong> ${d.operator || '-'}</p> <p style="color:#666; margin-top:4px; line-height:1.2;">
+                        <p><strong>Rombel:</strong> ${d.Rombel || '-'}</p> <p style="color:#666; margin-top:4px; line-height:1.2;">
+                        <p><strong>Kurikulum:</strong> ${d.Kurikulum || '-'}</p> <p style="color:#666; margin-top:4px; line-height:1.2;">
                         <p style="color:#666; margin-top:4px; line-height:1.2;">
                             <span class="material-icons" style="font-size:11px; vertical-align:middle">place</span> ${d.alamat}
                         </p>
